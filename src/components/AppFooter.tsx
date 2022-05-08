@@ -13,5 +13,5 @@ const AppFooterStyles = makeStyles({
 
 export default function AppFooter() {
   const classes = AppFooterStyles();
-  return <div className={classes.footer}> AppFooter </div>;
+  return <div className={classes.footer}> AppFooter1 </div>;
 }
