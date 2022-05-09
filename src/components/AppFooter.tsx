@@ -4,9 +4,16 @@ import { makeStyles } from '@material-ui/styles';
 
 const AppFooterStyles = makeStyles({
   footer: {
-    // display: 'flex',
-    // alignItems: 'center',
     backgroundColor: 'red',
+    position: 'fixed',
+    bottom: 0,
+
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: '30px',
+    width: '100%',
+    margin: '0px',
   }
 
 });

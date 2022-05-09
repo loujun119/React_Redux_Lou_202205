@@ -3,9 +3,15 @@ import { makeStyles } from '@material-ui/styles';
 
 const AppHeaderStyles = makeStyles({
   header: {
-    // display: 'flex',
-    // alignItems: 'top',
     backgroundColor: 'yellow',
+    position: 'fixed',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    top: 0,
+    height: '30px',
+    width: '100%',
+    margin: '0px',
   }
 });
 
