@@ -1,5 +1,6 @@
 import React from "react";
 import { makeStyles } from '@material-ui/styles';
+import { AppHeaderProps } from '../containers/AppHeaderContainer';
 
 const AppHeaderStyles = makeStyles({
   header: {
@@ -15,7 +16,24 @@ const AppHeaderStyles = makeStyles({
   }
 });
 
-export default function AppHeader() {
+export const AppHeader: React.FC<AppHeaderProps> = (props: AppHeaderProps) => {
   const classes = AppHeaderStyles();
-  return <div className={classes.header}> AppHeader </div>;
+  // <div className={classes.header}> AppHeader </div>;
+  const userName: string = props.userName;
+  const userAction = props.action.userInfoData;
+  return (
+    <>
+    <div className={classes.header}>
+      <h2>test</h2>
+      {userName !== '' && (
+        <div>
+          <h1> test2</h1>
+          <div><p>this is header</p></div>
+        </div>
+      )}
+    </div>
+    </>
+  );
 }
+
+export default AppHeader;

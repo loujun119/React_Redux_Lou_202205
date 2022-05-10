@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "../components/Home";
 import LoginIn from "../components/LoginIn";
 import AppFooter from "../components/AppFooter";
-import AppHeader from "../components/AppHeader";
+import { AppHeaderContainer as AppHeader } from "../containers/AppHeaderContainer";
 
 // const isDevelopEnv: boolean = process.env.NODE_ENV === "development";
 const App: React.FC = () => (
