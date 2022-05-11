@@ -1,0 +1,42 @@
+.login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 960px;
+    /* max-height: 980px; */
+    margin-top: -100px;
+};
+.login-input {
+    background-color: aqua;
+}
+.input-title {
+    margin-right: 10px;
+}
+.username, .user-password {
+margin-top: 10px;
+}
+.checkbox {
+    margin-left: 100px;
+    margin-top: 10px;
+}
+.submit-button {
+    /*border: none;
+    padding: 10px, 20px;
+    background-color: chartreuse;
+    color: black;
+    font-weight: 6px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    */width: 150px;
+    padding: 10px;
+    border: none;
+    background-color: chartreuse;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 70px;
+    border-radius: 15px;
+}

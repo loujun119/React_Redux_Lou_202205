@@ -18,7 +18,6 @@ const AppHeaderStyles = makeStyles({
 
 export const AppHeader: React.FC<AppHeaderProps> = (props: AppHeaderProps) => {
   const classes = AppHeaderStyles();
-  // <div className={classes.header}> AppHeader </div>;
   const userName: string = props.userName;
   const userAction = props.action.userInfoData;
   return (

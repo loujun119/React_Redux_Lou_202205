@@ -11,7 +11,6 @@ const HomeStyles = makeStyles({
     height: "40%",
     display: "flex",
     alignItems: "center",
-    // justifyContent: "space-between",
     marginTop: "3px",
     marginBottom: "3px",
   },

@@ -12,6 +12,7 @@ export interface User {
 }
 
 export interface Login {
+  isLogged: boolean;
   userName: string;
   password?: string;
 }
