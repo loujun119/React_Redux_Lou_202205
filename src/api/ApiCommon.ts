@@ -9,6 +9,24 @@ export class ApiCommon extends APIHandler {
     const sender = this.getSender();
     const resType = url.match(/csv/) ? { responseType: "blob" } : undefined;
 
+  // 使用 then 时，你将接收下面这样的响应 :
+  //   axios.get('/user/12345')
+  // .then(function(response) {
+  //   console.log(response.data);
+  //   console.log(response.status);
+  //   console.log(response.statusText);
+  //   console.log(response.headers);
+  //   console.log(response.config);
+  // });
+  //   axios.request(config)
+  // axios.get(url[, config])
+  // axios.delete(url[, config])
+  // axios.head(url[, config])
+  // axios.options(url[, config])
+  // axios.post(url[, data[, config]])
+  // axios.put(url[, data[, config]])
+  // axios.patch(url[, data[, config]])
+
     return await sender
       .get(url)
       .then((response: AxiosResponse) => {

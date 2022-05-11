@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="pragma" content="no-cache, no-store" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="cache-control" content="no-cache, no-store" />
+    <title>Application error page</title>
+  </head>
+  <body>
+    <div id="root">
+      <div id="message">
+        不明なエラーが発生しました。<br />
+        この画面を閉じ、再度APPから開き直して下さ。
+      </div>
+      <div id="status"></div>
+      <div id="detail"></div>
+    </div>
+    <script>
+      function getUrlParameter(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=(^&#*)");
+        var results = regex.exec(location.search);
+        return results !== null
+          ? decodeURIComponent(results[1].replace(/\+/g, " "))
+          : "";
+      }
+
+      var status = getUrlParameter("sts");
+      var message = getUrlParameter("msg");
+      var detail = getUrlParameter("detail");
+
+      if (!status && message) {
+        message =
+          "不明なエラーが発生しました。<br> この画面を閉じ、再度APPから開き直して下さ。<br><br>詳細：" +
+          message;
+      }
+
+      if (!message) {
+        switch (String(status)) {
+          case "401":
+            message =
+              "認証エラーが発生しました。<br>この画面を閉じ、再度APPから開き直して下さ。";
+            break;
+          case "405":
+            message =
+              "サーバにてバッチ処理が走っているため、API使用不可となります。<br>この画面を閉じ、再度APPから開き直して下さ。";
+            break;
+          case "408":
+            message =
+              "サーバにてタイムアウトが発生しました。<br>この画面を閉じ、再度APPから開き直して下さ。";
+            break;
+          default:
+            message =
+              "不明なエラーが発生しました。<br> この画面を閉じ、再度APPから開き直して下さ。";
+        }
+      }
+      if (message) {
+        document.getElementById("message").innerHTML = message;
+      }
+      if (status) {
+        document.getElementById("status").innerHTML =
+          "HTTPステータス" + message;
+      }
+      if (detail) {
+        document.getElementById("detail").innerHTML = "詳細" + message;
+      }
+    </script>
+  </body>
+</html>
