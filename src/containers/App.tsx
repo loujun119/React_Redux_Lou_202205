@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { AppStore } from "../types";
 import Home from "../components/Home";
 import LoginIn from "../components/login/Login";
-import AppFooter from "../components/AppFooter";
+import AppFooter from "../components/common/AppFooter";
 import { AppHeaderContainer as AppHeader } from "../containers/AppHeaderContainer";
 import { AddNew } from "../components/login/AddNew";
 
@@ -36,8 +36,8 @@ const App: React.FC = () => {
             }
           />
           <Route path="login">
-            <Route index element={<LoginIn />} />
-            <Route path="addNew" element={<AddNew />} />
+            <Route index element={[<AppHeader />, <LoginIn />,]} />
+            <Route path="addNew" element={[<AppHeader />, <AddNew />]} />
           </Route>
         </Route>
       </Routes>

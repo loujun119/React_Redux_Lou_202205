@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import AppHeader from "../components/AppHeader";
+import AppHeader from "../components/common/AppHeader";
 import { AppStore } from "../types/index";
 import { UserActions } from "../action/userAction";
 

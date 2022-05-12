@@ -12,9 +12,16 @@ export const AddNew = () => {
     confirmPassword: "",
   });
 
-  const fetchAddNewAccount = () => {
+  const changeValue = (e: any) => {
+    setValues({ ...values, [e.target.name]: e.target.value });
+  };
 
-  }
+  const handleClick = async (e: any) => {
+    e.preventDefault();
+    console.log("values username:" + values.name);
+    return ;
+    console.log("values password:" + values.password);
+  };
 
   const inputs = [
     {
@@ -27,6 +34,7 @@ export const AddNew = () => {
       label: "名前：",
       pattern: "^[A-Za-z0-9]{3,16}$",
       required: true,
+      onChange: changeValue,
     },
     {
       id: 2,
@@ -36,6 +44,7 @@ export const AddNew = () => {
       errorMessage: "It should be a valid email address!",
       label: "メールアドレス：",
       required: true,
+      onChange: changeValue,
     },
     {
       id: 3,
@@ -43,6 +52,7 @@ export const AddNew = () => {
       type: "date",
       placeholder: "Birthday",
       label: "生年月日：",
+      onChange: changeValue,
     },
     {
       id: 4,
@@ -54,6 +64,7 @@ export const AddNew = () => {
       label: "パスワード：",
       pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
       required: true,
+      onChange: changeValue,
     },
     {
       id: 5,
@@ -64,6 +75,7 @@ export const AddNew = () => {
       label: "パスワード確認：",
       pattern: values.password,
       required: true,
+      onChange: changeValue,
     },
   ];
   return (
@@ -73,7 +85,7 @@ export const AddNew = () => {
         {inputs.map((input) => (
           <FormInput input={input}></FormInput>
         ))}
-        <button onClick={fetchAddNewAccount}>Submit</button>
+        <button onClick={handleClick}>Submit</button>
       </div>
     </div>
   );

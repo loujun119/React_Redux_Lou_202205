@@ -1,0 +1,18 @@
+.app-header {
+    background-color: rgba(198, 191, 235, 0.459);
+    position: fixed;
+    top: 0px;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.app-header-link {
+    height: 30px;
+    margin-right: 10px;
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(7, 247, 135);
+}

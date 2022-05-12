@@ -2,39 +2,23 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    height: 960px;
-    /* max-height: 980px; */
-    margin-top: -100px;
-};
-.login-input {
-    background-color: aqua;
+    height: 100vh;
+    background: url("../../../public/image/IMG_0427.JPG");
+    background-size: cover;
+    background-position: center;
 }
-.input-title {
-    margin-right: 10px;
-}
-.username, .user-password {
-margin-top: 10px;
-}
-.checkbox {
-    margin-left: 100px;
-    margin-top: 10px;
-}
-.input-username, .input-password {
-    width: 260px;
-    height: 30px;
-    border-color: coral;
+.login-table {
+    background-color: rgba(74, 235, 221, 0.63);
+    padding: 0px 60px;
     border-radius: 10px;
 }
-.submit-button {
-    width: 150px;
-    padding: 10px;
-    border: none;
-    background-color: chartreuse;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 10px;
-    margin-left: 70px;
-    border-radius: 15px;
+.login-title {
+    color: rgb(77, 1, 77);
+    text-align: center;
+}
+
+.input-username, .input-password {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
 }
