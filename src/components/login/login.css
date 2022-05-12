@@ -20,16 +20,14 @@ margin-top: 10px;
     margin-left: 100px;
     margin-top: 10px;
 }
+.input-username, .input-password {
+    width: 260px;
+    height: 30px;
+    border-color: coral;
+    border-radius: 10px;
+}
 .submit-button {
-    /*border: none;
-    padding: 10px, 20px;
-    background-color: chartreuse;
-    color: black;
-    font-weight: 6px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-    */width: 150px;
+    width: 150px;
     padding: 10px;
     border: none;
     background-color: chartreuse;

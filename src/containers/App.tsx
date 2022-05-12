@@ -14,30 +14,34 @@ const App: React.FC = () => {
     ({ user }: AppStore) => user.login.isLogged
   );
   const ProtectedRoute = ({ children }: any) => {
-    if (isLogged) {
+    if (!isLogged) {
       return <Navigate to="/login" />;
     }
     return children;
   };
 
   return (
-    // <AppHeader />
-    // <AppFooter />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/">
-            <Route index element={
-              <ProtectedRoute>
-                <Home />
-              </ProtectedRoute>
-            } />
-            <Route path="login" >
-              <Route index element={<LoginIn />} />
-              <Route path="addNew" element={<AddNew />} />
-            </Route>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/">
+          <Route
+            index
+            element={[
+              <AppHeader />,
+                <Home />,
+              // <ProtectedRoute>
+              // </ProtectedRoute>,
+              <AppFooter />
+            ]
+            }
+          />
+          <Route path="login">
+            <Route index element={<LoginIn />} />
+            <Route path="addNew" element={<AddNew />} />
           </Route>
-        </Routes>
-      </BrowserRouter>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 };
 

@@ -23,7 +23,7 @@ export const AppHeader: React.FC<AppHeaderProps> = (props: AppHeaderProps) => {
   return (
     <>
     <div className={classes.header}>
-      <h2>test</h2>
+      <h2>AppHeader</h2>
       {userName !== '' && (
         <div>
           <h1> test2</h1>

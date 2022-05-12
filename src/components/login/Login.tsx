@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./login.css";
 
 export default function LoginIn() {
@@ -15,7 +16,7 @@ export default function LoginIn() {
           <span className="input-title">パスワード:</span>
           <input
             type={hidePs ? "password" : "text"}
-            className="input-username"
+            className="input-password"
           />
           <br />
           <input
@@ -24,10 +25,14 @@ export default function LoginIn() {
             onClick={() => {
               setHidePs(!hidePs);
             }}
-          />パスワード表示
+          />
+          パスワード表示
         </div>
       </div>
       <button className="submit-button">Submit</button>
+      <Link to="/login/addNew">
+        <button className="add-new-account">新規作成</button>
+      </Link>
     </div>
   );
 }
