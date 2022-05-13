@@ -1,21 +1,3 @@
-// import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-// import counterReducer from '../features/counter/counterSlice';
-
-// export const store = configureStore({
-//   reducer: {
-//     counter: counterReducer,
-//   },
-// });
-
-// export type AppDispatch = typeof store.dispatch;
-// export type RootState = ReturnType<typeof store.getState>;
-// export type AppThunk<ReturnType = void> = ThunkAction<
-//   ReturnType,
-//   RootState,
-//   unknown,
-//   Action<string>
-// >;
-
 import { createStore, applyMiddleware } from "redux";
 import createSagaMiddleware from 'redux-saga';
 import { createBrowserHistory } from "history";
@@ -28,10 +10,12 @@ import rootSaga from "../sagas";
 
 export const history = createBrowserHistory();
 const sagaMiddleware = createSagaMiddleware();
+// ブラウザのdevelop toolを有効になる
 const composeEnhancers = composeWithDevTools({ trace: true});
 
 export const Store = (initialState: Partial<AppStore> = {}) => {
   const middleWares = [];
+  // 開発環境場合、reduxのログを出力
   if (process.env.NODE_ENV === 'development') {
     const logger = createLogger({
       collapsed: true,
@@ -39,7 +23,9 @@ export const Store = (initialState: Partial<AppStore> = {}) => {
     });
     middleWares.push(logger);
   }
+  // router追加
   middleWares.push(routerMiddleware(history));
+  // saga追加
   middleWares.push(sagaMiddleware);
 
   const store = createStore(
